@@ -1,0 +1,819 @@
+body {
+    overflow-x: hidden;
+}
+
+
+#bloghome .card{
+    -webkit-box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow:-1px 4px 15px -8px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.75);
+}
+
+
+#bloghome .card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+
+#blogpage .card{
+    -webkit-box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow:-1px 4px 15px -8px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.75);
+}
+
+
+#blogpage .card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+.navbar .nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+.my-navbar .navbar-nav li a:hover {
+    color: white !important;
+}
+
+/* .navbar .nav-item.active {
+    border-bottom: #fff 3px solid;
+} */
+
+.my-navbar {
+    /* transition: 750ms ease; */
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.my-navbar.scrolled {
+    background: rgba(0,0,0,0.7) !important;
+}
+
+/* change navbar background to transparent */
+/* showcase; */
+.my-header {
+    width: 100%;
+    height: 650px;
+    background: url("../img/bannersree.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.my-header-dark-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*
+.my-header img {
+    width: 100%;
+    height: 650px;
+    position: absolute;
+    z-index: -22;
+    top: 0;
+} */
+
+
+
+.home {
+    height: 100%;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+
+
+/* explore head section */
+#explore-head-section {
+    width: 100%;
+    height: 300px;
+    background: url("../img/banner.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+.explore-head-section-dark-overlay{
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#home-aboutus {
+    min-height: 450px;
+    position: relative;
+    /* background: url("../img/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+    /* color: #fff; */
+}
+
+
+
+.home-aboutus-dark-overlay {
+    /* background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; */
+}
+
+
+#contact{
+    min-height: 600px;
+    /* position: relative;
+    background: url("../img/3-3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: -50px; */
+        background-color: #f8f9fa !important;
+    color: #000000;
+
+}
+
+.contactus-darkoverlay {
+    /* background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; */
+}
+
+#blog-aboutus {
+    min-height: 600px;
+    position: relative;
+    background: url("../img/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: -50px;
+    color: #fff;
+}
+
+#blog-aboutus img {
+    height: 250px;
+    width: 250px;
+}
+
+
+
+.blog-aboutus-dark-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#main-footer{
+    background: rgba(0,0,0,0.9);
+}
+
+
+
+
+/* MEDIA QUIRIES */
+
+@media (min-width:200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* showcase; */
+    .my-header {
+        width: 100%;
+        height: 180px;
+    }
+
+
+
+
+    /* .my-header img {
+        width: 100%;
+        height: 650px;
+        position: absolute;
+        z-index: -22;
+        top: 0;
+    } */
+
+    .my-navbar .navbar-nav li a {
+        color: white !important;
+    }
+
+    .homecentertext {
+    }
+
+    .homecentertext h1 {
+        font-size: 15px;
+    }
+
+    .homecentertext p {
+        font-size: 12px;
+    }
+
+
+    #explore-head-section {
+        height: 200px;
+    }
+    #explore-head-section h1 {
+        font-size: 18px;
+    }
+
+    .aboutright img {
+        height: 250px;
+        width: 250px;
+    }
+
+
+    #explore-head-section p {
+        font-size: 12px;
+    }
+
+    #home-aboutus-section h1{
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    #home-aboutus-section h3{
+        font-size: 12px;
+        padding-top: 10px;
+    }
+    #home-aboutus-section p{
+        font-size: 11px;
+
+    }
+
+    #home-aboutus img {
+        height: 100px;
+        width: 100px;
+        display: flex;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    #bloghome h1 {
+        margin-top: 30px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    #bloghome .myposts a{
+        font-size: 15px;
+        padding: 0px 0px !important;
+    }
+    #bloghome .myposts p{
+        font-size: 12px;
+        padding: 0px 0px;
+    }
+    #bloghome .recentposts a{
+        font-size: 14px;
+    }
+
+
+    #blog-aboutus-section h1{
+        padding-top: 150px;
+    }
+    #blog-aboutus-section p{
+        font-size: 12px;
+    }
+
+    #blogpage h1 {
+        margin-top: 50px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+    #blogpage .myposts a{
+        font-size: 16px;
+    }
+    #blogpage .recentposts a{
+        font-size: 12px;
+    }
+
+    #contact h1{
+        font-size: 15px;
+    }
+    #contact h3{
+        font-size: 14px;
+    }
+    #contact p{
+        font-size: 12px;
+    }
+
+    #contact{
+        min-height: 300px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (min-width: 576px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* showcase; */
+    .my-header {
+        width: 100%;
+        height: 480px;
+    }
+
+    .my-header h1{
+
+      }
+
+
+
+
+
+
+    /* .my-header img {
+        width: 100%;
+        height: 650px;
+        position: absolute;
+        z-index: -22;
+        top: 0;
+    } */
+
+    .my-navbar .navbar-nav li a {
+        color: white !important;
+    }
+
+    .homecentertext {
+    }
+
+    .homecentertext h1 {
+        font-size: 25px;
+    }
+
+    .homecentertext p {
+        font-size: 15px;
+    }
+
+
+    #explore-head-section {
+        height: 200px;
+    }
+    #explore-head-section h1 {
+        font-size: 25px;
+    }
+
+    #explore-head-section img {
+        height: 250px;
+        width: 250px;
+    }
+
+
+    #explore-head-section p {
+        font-size: 15px;
+    }
+
+    #home-aboutus-section h1{
+        padding-top: 50px;
+        font-size: 25px;
+    }
+    #home-aboutus-section h3{
+        font-size: 25px;
+        padding-top: 40px;
+    }
+    #home-aboutus-section p{
+        font-size: 12px;
+
+    }
+
+    #home-aboutus img {
+        height: 200px;
+        width: 200px;
+        display: flex;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+
+
+
+    #bloghome h1 {
+        margin-top: 60px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    #bloghome .myposts a{
+        font-size: 18px;
+    }
+    #bloghome .recentposts a{
+        font-size: 12px;
+    }
+
+
+    #blog-aboutus-section h1{
+        padding-top: 150px;
+    }
+
+
+    #blogpage h1 {
+        margin-top: 50px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #blogpage .myposts a{
+        font-size: 10px;
+    }
+    #blogpage .myposts p{
+        font-size: 18px;
+    }
+    #blogpage .recentposts a{
+        font-size: 12px;
+    }
+
+
+        #contact h1{
+            font-size: 15px;
+        }
+        #contact h3{
+            font-size: 14px;
+        }
+        #contact p{
+            font-size: 12px;
+        }
+}
+
+@media (min-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* showcase; */
+    .my-header {
+        width: 100%;
+        height: 480px;
+    }
+
+    .my-header h1{
+
+      }
+
+
+
+
+    /* .my-header img {
+        width: 100%;
+        height: 650px;
+        position: absolute;
+        z-index: -22;
+        top: 0;
+    } */
+
+    .my-navbar .navbar-nav li a {
+        color: white !important;
+    }
+
+    .homecentertext {
+    }
+
+    .homecentertext h1 {
+        font-size: 25px;
+    }
+
+    .homecentertext p {
+        font-size: 15px;
+    }
+
+
+    #explore-head-section {
+        height: 200px;
+    }
+    #explore-head-section h1 {
+        font-size: 25px;
+    }
+
+    #explore-head-section p {
+        font-size: 15px;
+    }
+
+    #home-aboutus-section h1{
+        padding-top: 50px;
+        font-size: 25px;
+    }
+    #home-aboutus-section h3{
+        font-size: 25px;
+        padding-top: 5px;
+    }
+    #home-aboutus-section p{
+        font-size: 12px;
+}
+
+    #home-aboutus img {
+        padding-top: 20px;
+        height: 250px;
+        width: 200px;
+
+        border-radius: 20px;
+    }
+
+
+    #bloghome h1 {
+        margin-top: 60px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    #bloghome .myposts a{
+        font-size: 18px;
+    }
+    #bloghome .recentposts a{
+        font-size: 12px;
+    }
+
+
+    #blog-aboutus-section h1{
+        padding-top: 150px;
+    }
+    #blog-aboutus-section p{
+        font-size: 16px;
+    }
+
+    #blogpage h1 {
+        margin-top: 50px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #blogpage .myposts a{
+        font-size: 20px;
+    }
+    #blogpage .recentposts a{
+        font-size: 12px;
+    }
+
+
+        #contact h1{
+            font-size: 25px;
+        }
+        #contact p{
+            font-size: 16px;
+        }
+}
+
+@media (min-width:992px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* showcase; */
+    .my-header {
+        width: 100%;
+        height: 580px;
+    }
+
+    .my-header h1{
+
+      }
+
+    /* .my-header img {
+        width: 100%;
+        height: 650px;
+        position: absolute;
+        z-index: -22;
+        top: 0;
+    } */
+
+    .my-navbar .navbar-nav li a {
+        color: white !important;
+    }
+
+    .homecentertext {
+    }
+
+    .homecentertext h1 {
+        font-size: 30px;
+    }
+
+    .homecentertext p {
+        font-size: 20px;
+    }
+
+
+    #explore-head-section {
+        height: 200px;
+    }
+    #explore-head-section h1 {
+        font-size: 30px;
+    }
+
+    #explore-head-section p {
+        font-size: 15px;
+    }
+
+    #home-aboutus-section h1{
+        padding-top: 50px;
+        font-size: 25px;
+    }
+
+    #home-aboutus-section p{
+        font-size: 15px;
+
+    }
+    #home-aboutus-section h3{
+        font-size: 25px;
+        padding-top: 40px;
+    }
+
+    #home-aboutus img {
+        margin-top: -0px;
+        height: 350px;
+        width: 300px;
+
+        border-radius: 20px;
+    }
+
+    #bloghome h1 {
+        margin-top: 60px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #bloghome .myposts a{
+        font-size: 20px;
+    }
+    #bloghome .recentposts a{
+        font-size: 15px;
+    }
+
+
+    #blog-aboutus-section h1{
+        padding-top: 150px;
+    }
+    #blog-aboutus-section p{
+        font-size: 16px;
+    }
+
+    #blogpage h1 {
+        margin-top: 50px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #blogpage .myposts a{
+        font-size: 20px;
+    }
+    #blogpage .recentposts a{
+        font-size: 15px;
+    }
+
+
+        #contact h1{
+            font-size: 25px;
+        }
+        #contact p{
+            font-size: 16px;
+        }
+}
+
+@media (min-width:1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* showcase; */
+    .my-header {
+        width: 100%;
+        height: 630px;
+    }
+
+    .my-header h1{
+
+      }
+
+    .my-header img {
+        width: 100%;
+        height: 650px;
+        position: absolute;
+        z-index: -22;
+        top: 0;
+    }
+
+    .my-navbar .navbar-nav li a {
+        color: white !important;
+    }
+
+    .homecentertext {
+    }
+
+    .homecentertext h1 {
+        font-size: 35px;
+    }
+
+    .homecentertext p {
+        font-size: 25px;
+    }
+
+
+
+    #explore-head-section h1 {
+        font-size: 35px;
+    }
+
+    #explore-head-section p {
+        font-size: 16px;
+    }
+
+    #home-aboutus-section h1{
+        padding-top: 50px;
+        font-size: 25px;
+    }
+    #home-aboutus-section h3{
+        font-size: 25px;
+        padding-top: 30px;
+    }
+    #home-aboutus-section p{
+        font-size: 16px;
+    }
+
+    #home-aboutus img {
+        margin-top: -0px;
+        height: 330px;
+        width: 250px;
+
+        border-radius: 20px;
+    }
+    #bloghome h1 {
+        margin-top: 60px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #bloghome .myposts a{
+        font-size: 20px;
+    }
+    #bloghome .recentposts a{
+        font-size: 15px;
+    }
+
+
+    #blog-aboutus-section h1{
+        padding-top: 150px;
+    }
+    #blog-aboutus-section p{
+        font-size: 16px;
+    }
+
+    #blogpage h1 {
+        margin-top: 50px;
+        padding: 8px 15px;
+        border: solid 5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    #blogpage .myposts a{
+        font-size: 20px;
+    }
+    #blogpage .recentposts a{
+        font-size: 15px;
+    }
+
+    #contact h1{
+        font-size: 25px;
+    }
+    #contact p{
+        font-size: 16px;
+    }
+
+}
