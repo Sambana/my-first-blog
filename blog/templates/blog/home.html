@@ -1,0 +1,234 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block body_class %} my-header {% endblock %}
+
+{% block content %}
+<div class="container home">
+    <div class="row">
+        <div class="col-12">
+            <div class="container homecentertext text-center text-white">
+                <h1 class="sree"><span class="author"></span></h1>
+                <p class="lead tagline">Student At Computer Science</p>
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+<!-- LOGIN MODAL -->
+
+<!-- Modal -->
+<div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form-group">
+                    <label for="username">UserName</label>
+                    <input type="text" class="form-control" placeholder="enter your user name" name="" value="">
+
+                    <label for="username">Passowrd</label>
+                    <input type="text" class="form-control" placeholder="password" name="" value="">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Register</button>
+                <button type="button" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- about me -->
+<!-- about us -->
+<section id="home-aboutus-section" class="py-3">
+    <div id="home-aboutus">
+        <div class="home-aboutus-dark-overlay">
+            <div class="container">
+                <h1 class="font-weight-bold ">About Me</h1>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12 aboutright">
+                        <img src="{% static 'img/vivek.jpg' %}" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12 aboutleft">
+                        <h3 class="">Welcome,</h3>
+                        <p class="lead">To My Blog.
+                            I am <strong class="font-weight-bold h5">Vivekanand</strong>, Lorem ipsum dolor s
+                            it amet, consectetur adipisicing elit. Reiciendis enim nulla error numquam incidunt magni
+                            provident veniam distinctio fugiat ipsa consequuntur, repellendus nobis ducimus porro,
+                            assumenda molestiae vero officia pariatur, dolores iste omnis doloribus laudantium o
+                            bcaecati perspiciatis aliquam! Delectus eum, aspernatur in quisquam animi suscipit hic,
+                            et cupiditate obcaecati minus!
+                            <br> <br>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium excepturi quia, quis ducimus, impedit nobis magnam atque
+                            voluptate recusandae ex.</p>
+
+
+
+
+                        <a href="{% url 'about' %}" class="btn btn-success btn-block">Know More..</a>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+
+
+
+<!-- EXPLORE Head -->
+
+<section id="explore-head-section" class="bg-primary">
+    <div class="explore-head-section-dark-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="py-5">
+                        <h1 class="vision">My Words that Matters</h1>
+                        <p class="lead"> <span class="mywords"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- blog -->
+<section id="bloghome">
+    <div class="container">
+
+        <h1 class="text-center d-inline-block">Posts</h1>
+        <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+
+                        <div class="card recentposts shadow p-1 mb-3 bg-white rounded">
+                            <h3 class="text-center">Recent Posts</h3>
+
+                            <h5 class="card-header"><a href="">Difference between Sphere and Circle</a></h5>
+                            <h5 class="card-header"><a href="">Difference between Sphere and Circle</a></h5>
+                            <h5 class="card-header"><a href="">Difference between Sphere and Circle</a></h5>
+                            <h5 class="card-header"><a href="">Difference between Sphere and Circle</a></h5>
+                            <h5 class="card-header"><a href="">Difference between Sphere and Circle</a></h5>
+
+                        </div>
+
+
+
+                    </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+
+                {% for post in twoposts|slice:":2"  %}
+
+                        <div class="card myposts p-3 mb-3 bg-white rounded">
+                            <h2 class="card-header"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <div class="card-body">
+                                <p class="card-text">{{ post.text|safe|truncatewords:5|linebreaks }}</p>
+                                <a href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
+                                <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+                                
+                            </div>
+                        </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <a href="{% url 'post_list' %}" class="btn mb-5 btn-success shadow btn-block">View More <i class="fa fa-arrow-circle-down"></i> </a>
+
+
+
+            </div>
+    </div>
+    </div>
+
+</section>
+<!-- contact us -->
+<!-- contact us -->
+<section id="contact" class="bg-light mt-3">
+    <div class="contactus-darkoverlay">
+        <div class="container">
+            <h1 class="text-center">Contact Me</h1>
+            <div class="row">
+                <div class="col-lg-9">
+                    <h3>Get in Touch</h3>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto sequi veniam pariatur consequatur doloremque, nobis.</p>
+                    <form action="">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg input-group-sm input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user-circle"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Name" name="" value="">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="input-group input-group-lg input-group-sm">
+                                <span class="input-group-text">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control" placeholder="Email" name="" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-lg input-group-sm">
+                                <span class="input-group-text">
+                                    <i class="fa fa-pencil"></i>
+                                </span>
+                                <textarea type="email" class="form-control" placeholder="Message" rows="5" name="" value=""></textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Submit" class="btn btn-sm btn-lg btn-success btn-block">
+
+
+                    </form>
+                </div>
+                <div class="col-lg-3 align-self-center">
+                    <!-- <img src="img/dada.png" alt="" class="img-fluid"> -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'blog/base.html' %}
+
+{% block body_class %} my-blog {% endblock %}
+
+{% block content %}
+
+<!-- about me -->
+    <!-- about us -->
+    <section id="blog-aboutus-section">
+        <div id="blog-aboutus" class="my-blog">
+            <div class="blog-aboutus-dark-overlay">
+                <div class="container py-5">
+
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2"></div>
+                        <div class="col-lg-8 col-md-8">
+                            <h1 class="text-center">My Posts</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                At vel culpa id earum numquam exercitationem explicabo nobis.
+                                Qui eius assumenda, sequi, molestiae perspiciatis illum, facere,
+                                distinctio deleniti voluptas fugit sed.</p>
+
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-6">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- blog -->
+    <section id="blogpage">
+        <div class="container">
+
+            <h1 class="text-center d-inline-block">Posts</h1>
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                    <div class="card  p-3 mb-3 bg-white rounded">
+                        <h3 class="text-center">Recent Posts</h3>
+
+                        <div class="card-header recentposts">
+                            <h5><a href="">Difference between Sphere and Circle</a></h5>
+                            <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
+
+                        </div>
+
+                        <div class="card-header recentposts">
+                            <h5><a href="">Difference between Sphere and Circle</a></h5>
+                            <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
+
+                        </div>
+
+                        <div class="card-header recentposts">
+                            <h5><a href="">Difference between Sphere and Circle</a></h5>
+                            <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
+
+                        </div>
+
+                        <div class="card-header recentposts">
+                            <h5><a href="">Difference between Sphere and Circle</a></h5>
+                            <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
+
+                        </div>
+
+                        <div class="card-header recentposts">
+                            <h5><a href="">Difference between Sphere and Circle</a></h5>
+                            <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="col-lg-8 col-md-8">
+
+
+                        {% for post in posts %}
+
+                            <div class="card myposts p-3 mb-3 bg-white rounded">
+                                <h2 class="card-header"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                <div class="card-body">
+                                    <p class="card-text">{{ post.text|safe|truncatewords:25|linebreaks }}</p>
+                                    <a href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
+                                    <br> <br>
+                                    <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

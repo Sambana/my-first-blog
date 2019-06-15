@@ -1,4 +1,4 @@
-body {
+.my-blogbody {
     overflow-x: hidden;
 }
 
@@ -158,18 +158,18 @@ body {
     height: 100%; */
 }
 
-#blog-aboutus {
-    min-height: 600px;
+.my-blog{
+    min-height: 650px;
     position: relative;
     background: url("../img/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin-top: -50px;
+    margin-top: 0px;
     color: #fff;
 }
 
-#blog-aboutus img {
+.my-blog img {
     height: 250px;
     width: 250px;
 }
@@ -277,11 +277,11 @@ body {
         font-size: 15px;
     }
 
-    #bloghome .myposts a{
-        font-size: 15px;
+    .myposts a{
+        font-size: 15px !important;
         padding: 0px 0px !important;
     }
-    #bloghome .myposts p{
+    .myposts p{
         font-size: 12px;
         padding: 0px 0px;
     }
@@ -305,7 +305,7 @@ body {
         font-size: 18px;
     }
 
-    #blogpage .myposts a{
+    .myposts a{
         font-size: 16px;
     }
     #blogpage .recentposts a{
@@ -421,7 +421,7 @@ body {
         font-size: 15px;
     }
 
-    #bloghome .myposts a{
+    .myposts a{
         font-size: 18px;
     }
     #bloghome .recentposts a{
@@ -437,16 +437,26 @@ body {
     #blogpage h1 {
         margin-top: 50px;
         padding: 8px 15px;
+        color: #0b79fa;
         border: solid 5px #0b79fa;
         text-transform: uppercase;
         font-size: 20px;
     }
+    #blogpage h3 {
+        margin-top: 20px;
+        padding: 8px 15px;
+        color: #0b79fa;
+        border-bottom: solid 0.5px #0b79fa;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
 
-    #blogpage .myposts a{
+    .myposts a{
         font-size: 10px;
     }
     #blogpage .myposts p{
         font-size: 18px;
+        color: black;
     }
     #blogpage .recentposts a{
         font-size: 12px;
@@ -546,7 +556,7 @@ body {
         font-size: 15px;
     }
 
-    #bloghome .myposts a{
+    .myposts a{
         font-size: 18px;
     }
     #bloghome .recentposts a{
@@ -569,7 +579,7 @@ body {
         font-size: 20px;
     }
 
-    #blogpage .myposts a{
+    .myposts a{
         font-size: 20px;
     }
     #blogpage .recentposts a{
@@ -665,7 +675,7 @@ body {
         font-size: 20px;
     }
 
-    #bloghome .myposts a{
+    .myposts a{
         font-size: 20px;
     }
     #bloghome .recentposts a{
@@ -688,7 +698,7 @@ body {
         font-size: 20px;
     }
 
-    #blogpage .myposts a{
+    .myposts a{
         font-size: 20px;
     }
     #blogpage .recentposts a{
@@ -779,7 +789,7 @@ body {
         font-size: 20px;
     }
 
-    #bloghome .myposts a{
+    .myposts a{
         font-size: 20px;
     }
     #bloghome .recentposts a{
@@ -802,7 +812,7 @@ body {
         font-size: 20px;
     }
 
-    #blogpage .myposts a{
+    .myposts a{
         font-size: 20px;
     }
     #blogpage .recentposts a{
