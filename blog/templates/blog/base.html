@@ -18,9 +18,9 @@
 <body>
     <!-- SHOWCASE IMAGE AND NAVBAR INSIDE MY-HEADER -->
         <section id="showcase">
-            <div class="{% block body_class %}{% endblock %}" >
-                <div class="my-header-dark-overlay">
-                    <nav class="my-navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="{% block bg_class %}{% endblock %}" >
+                <div class="{% block bgdark_class %}{% endblock %}">
+                    <nav class="{% block navbg %}{% endblock %} navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                         <div class="container">
                             <a href="{% url 'home' %}" class="navbar-brand d-none d-sm-block">Vivek <span class="h3">V</span></a>
                             <button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
@@ -42,7 +42,7 @@
                                         <button class="nav-link btn btn-link text-white" style="font-size:12px;" data-toggle="modal" data-target="#loginmodel">Login</button>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#contact" class="nav-link">Contact</a>
+                                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -103,6 +103,7 @@
             });
 
         </script>
+        {% block scrolleffect %}{%endblock%}
         <script>
             $(window).scroll(function() {
                 $('nav').toggleClass('scrolled', $(this).scrollTop() > 500);

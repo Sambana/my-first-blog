@@ -19,3 +19,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+# 
+# class Aboutme(models.Model):
+#     mybio = RichTextField(max_length=700)
+#
+#     def publish(self):
+#         self.save()
+#
+#     def __str__(self):
+#         return self.mybio

@@ -126,3 +126,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media')
+
+
+### EMAIL CONFIGURATION
+#see: docs.djangoproject.com/en/dev/ref/settings/#email-backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST = 'smtp.live.com'
+
+#password used to login
+EMAIL_HOST_PASSWORD = '@komaliiscbanglore'
+
+#email address used to login
+EMAIL_HOST_USER = 'sambanakomal@gmail.com'
+
+#EMAIL_PORT = 25
+EMAIL_PORT = 587
+
+EMAIL_SUBJECT_PREFIX = 'test'
+
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+
+### END EMAIL CONFIGURATION
