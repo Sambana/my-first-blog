@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% load static %}
 {% block body_class %} my-blog {% endblock %}
 
 {% block content %}
@@ -54,6 +54,7 @@
                             <h5><a href="">Difference between Sphere and Circle</a></h5>
                             <p class="mb-1 text-muted">Jan. 31, 2019, 7:20 p.m.</p>
 
+
                         </div>
 
                         <div class="card-header recentposts">
@@ -93,6 +94,11 @@
                                     <a href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
                                     <br> <br>
                                     <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+                                    <p class="text-lead">Author : {{ post.author }}</p>
+                                    {% if post.image %}
+                                        <img src="{{ post.image.url }}" width="100px">
+                                    {% else %}
+                                    {% endif %}
 
                                 </div>
                             </div>
