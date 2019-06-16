@@ -5,6 +5,7 @@ from django.core.validators import FileExtensionValidator
 from ckeditor.fields import RichTextField
 
 
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -33,3 +34,27 @@ class Project(models.Model):
 
     def __str__(self):
         return self.ptitile
+
+class Aboutme(models.Model):
+    atitle = models.CharField(max_length=200, default="Welcome to My Blog")
+    published_date = models.DateTimeField(default=timezone.now)
+    atext = RichTextField()
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.atitle
+
+class Quote(models.Model):
+    qauthor = models.CharField(max_length=200)
+    qdate = models.DateField()
+    qtext = RichTextField()
+    published_date = models.DateTimeField(default=timezone.now)
+
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.qauthor

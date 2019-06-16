@@ -119,22 +119,22 @@
 /* explore head section */
 #explore-head-section {
     width: 100%;
-    height: 300px;
     background: url("../img/banner.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover
     background-attachment: fixed;
     color: white;
 }
 .explore-head-section-dark-overlay{
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
 }
+
 #home-aboutus {
     min-height: 450px;
     position: relative;
@@ -225,7 +225,7 @@
     /* showcase; */
     .my-header {
         width: 100%;
-        height: 180px;
+        height: 250px;
     }
     .recentposts{
         color: #0b79fa;
@@ -711,7 +711,7 @@
     }
 
     #explore-head-section p {
-        font-size: 15px;
+        font-size: 150px;
     }
 
     #home-aboutus-section h1{
@@ -849,7 +849,7 @@
     }
 
     #explore-head-section p {
-        font-size: 16px;
+        font-size: 25px;
     }
 
     #home-aboutus-section h1{
@@ -916,15 +916,15 @@
         height: 150px;
     }
     .myposts > .bheading a{
-        font-size: 20px !important;
+        font-size: 15px !important;
     }
     .read>a {
-        font-size: 15px !important;
-        padding: 8px 25px !important;
+        font-size: 14px !important;
+        padding: 6px 18px !important;
         margin-bottom: 5px;
     }
     .myposts p{
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
 
 }

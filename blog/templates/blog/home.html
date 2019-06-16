@@ -87,18 +87,11 @@
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-12 col-12 aboutleft">
-                        <h3 class="">Welcome,</h3>
-                        <p class="lead">To My Blog.
-                            I am <strong class="font-weight-bold h5">Vivekanand</strong>, Lorem ipsum dolor s
-                            it amet, consectetur adipisicing elit. Reiciendis enim nulla error numquam incidunt magni
-                            provident veniam distinctio fugiat ipsa consequuntur, repellendus nobis ducimus porro,
-                            assumenda molestiae vero officia pariatur, dolores iste omnis doloribus laudantium o
-                            bcaecati perspiciatis aliquam! Delectus eum, aspernatur in quisquam animi suscipit hic,
-                            et cupiditate obcaecati minus!
-                            <br> <br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Accusantium excepturi quia, quis ducimus, impedit nobis magnam atque
-                            voluptate recusandae ex.</p>
+                        {% for aboutme in mybio|slice:":1"  %}
+                        <h3 class="">{{aboutme.atitle}}</h3>
+                        <p class="lead">{{aboutme.atext|safe}}</p>
+
+                        {% endfor %}
 
 
 
@@ -127,9 +120,15 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="py-5">
-                        <h1 class="vision">My Words that Matters</h1>
-                        <p class="lead"> <span class="mywords"></span></p>
-                    </div>
+                        <h3 class=""> <span class="mywords"></span></h3>
+
+                        {% for qoday in myquote|slice:":1"  %}
+                        <p class="lead">{{qoday.qtext|safe}}</p>
+                        <p><span class="lead d-inline">{{qoday.qauthor|safe}}</span>  <span class=" d-inline blockquote-footer">[{{qoday.qdate|safe}}]</span></p>
+
+
+
+                        {% endfor %}
                 </div>
             </div>
         </div>
@@ -145,46 +144,51 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
-                <div class="card recentposts shadow p-1 mb-3 bg-white rounded">
-                    <h3 class="text-center">Recent Posts</h3>
-                    {% for post in recentposts%}
-                        <div class="p-3 recentposts">
-                        <h2 class=""><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                        <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
-                     </div>
-                     {% endfor %}
-                 </div>
-             </div>
+                               <div class="card recentposts shadow p-1 mb-3 bg-white rounded">
+                                   <h3 class="text-center">Recent Posts</h3>
+                                   {% for post in recentposts|slice:":2" %}
 
-            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-
-                {% for post in twoposts|slice:":2"  %}
-
-                <div class="card myposts p-3 mb-3 bg-white rounded">
-                    <h2 class="card-header"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-9">
-                                <p class="card-text">{{ post.text|safe|truncatewords:25|linebreaks }}</p>
-                                <a href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
-                                <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
-                                <p class="text-lead">Author : {{ post.author }}</p>
+                                       <div class="p-3 recentposts">
+                                       <h2 class=""><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                       <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
                             </div>
-                            <div class="col-3">
-                                {% if post.image %}
-                                <img src="{{ post.image.url }}" width="100px">
-                                {% else %}
-                                {% endif %}
-                            </div>
-                        </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+
+                                    {% for post in twoposts|slice:":2"  %}
+
+                                            <div class="card mb-3 myposts p-1 bg-white rounded">
+                                                <h2 class="card-header bheading"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                                <div class="card-body">
+                                                    <div class="row">
+
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                                            {% if post.image %}
+                                                                <img class="img-responsive" src="{{ post.image.url }}">
+                                                            {% else %}
+                                                            {% endif %}
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-md-9 col-sm-12 col-12 read">
+                                                            <p class="card-text">{{ post.text|safe|truncatewords:25|linebreaks }}</p>
+                                                            <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
+                                                            <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+                                                            <p class="text-lead">Author : {{ post.author }}</p>
+                                                        </div>
+
+                                                    </div>
 
 
-                    </div>
-                </div>
+                                                </div>
+                                            </div>
 
-                {% endfor %}
+                                    {% endfor %}
 
-            </div>
+                                </div>
+
 
 
             <a href="{% url 'post_list' %}" class="btn mb-5 btn-success shadow btn-block">View More <i class="fa fa-arrow-circle-down"></i> </a>
@@ -196,5 +200,161 @@
     </div>
 
 </section>
+
+<!-- IMAGE GALLERY -->
+    <section id="imagegallery">
+        <div class="imagegallery-darkoverlay">
+            <div class="gallery-block compact-gallery">
+                <div class="container">
+                    <div class="heading text-center pb-5">
+                        <h2 class="d-inline">Our Gallery</h2>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/bridal1.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/bridal1.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">BRIDAL-FRONT</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/bridal2.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/bridal2.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">BRIDAL-BACK</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/bridal4.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/bridal4.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">BRIDAL-LEG</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/arabic3.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/arabic3.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">ARABIC</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/arabic1.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/arabic1.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">ARABIC</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/arabic2.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/arabic2.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">ARABIC</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/simple1.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/simple1.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">SIMPLE</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/simple2.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/simple2.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">SIMPLE</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/stiching4.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/stiching4.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">CHUDIDHARS</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galthirdrow  col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/stiching.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/stiching.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">KIDS CLOTHING</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/stiching2.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/stiching2.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">KIDS CLOTHING</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/stiching3.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/stiching3.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">BLOUSES</span>
+                                </span>
+                            </a>
+                        </div>
+
+
+
+                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/card0.png" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/card0.png" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">INVITATIONS</span>
+                                </span>
+                            </a>
+                        </div>
+
+
+
+                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/card1.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/card1.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">VISITING CARDS</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
+                            <a href="img/ourgallery/bangles.jpg" class="lightbox">
+                                <img class="img-fluid image" src="img/ourgallery/bangles.jpg" alt="">
+                                <span class="description">
+                                    <span class="discription-heading">BANGLES</span>
+                                </span>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
