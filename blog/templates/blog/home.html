@@ -165,14 +165,14 @@
                                                 <div class="card-body">
                                                     <div class="row">
 
-                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                                                             {% if post.image %}
                                                                 <img class="img-responsive" src="{{ post.image.url }}">
                                                             {% else %}
                                                             {% endif %}
                                                         </div>
 
-                                                        <div class="col-lg-9 col-md-9 col-sm-6 col-6 read">
+                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-9 read">
                                                             <p class="card-text">{{ post.text|safe|truncatewords:25|linebreaks }}</p>
                                                             <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
                                                             <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
