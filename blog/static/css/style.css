@@ -1,7 +1,66 @@
 .my-blogbody {
     overflow-x: hidden;
 }
+/* OUR GALLERY */
+.gallery-block {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
 
+.gallery-block .heading {}
+
+.gallery-block .heading h2 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.gallery-block.compact-gallery .item {
+    overflow: hidden;
+    margin-bottom: 0;
+    background: #eb625d;
+    opacity: 1;
+}
+
+.gallery-block.compact-gallery .item .image {
+    transition: 0.8s ease;
+}
+
+.gallery-block.compact-gallery .item .info {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-block.compact-gallery .item .description {
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    font-size: 17px;
+    line-height: 18px;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    opacity: 1;
+    color: #fff;
+    transition: 0.8s ease;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.39));
+}
+
+.gallery-block.compact-gallery .item .description .description-heading {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.gallery-block.compact-gallery .item .description .description-body {
+    font-size: 0.8em;
+    margin-top: 10px;
+    font-weight: 300;
+}
 
 #bloghome .card{
     -webkit-box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.75);
@@ -93,7 +152,25 @@
     height: 100%;
 }
 
+#imagegallery {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background: url("../img/bgvivek.jpg")!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
+/* dark overlay on image */
+.imagegallery-darkoverlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
 /*
 .my-header img {
     width: 100%;
@@ -102,18 +179,6 @@
     z-index: -22;
     top: 0;
 } */
-
-
-
-.home {
-    height: 100%;
-    display: flex;
-   justify-content: center;
-   align-items: center;
-
-}
-
-
 
 
 /* explore head section */
@@ -212,7 +277,14 @@
     background: rgba(0,0,0,0.9);
 }
 
-
+/* image gallery */
+#imagegallery {
+    position: relative;
+    background: url("../img/ourteam.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 
 /* MEDIA QUIRIES */
@@ -221,15 +293,66 @@
     body {
         overflow-x: hidden;
     }
+    #imagegallery{
+       min-height: 550px;
+   }
+   #imagegallery h2 {
+       font-size: 14px;
+       color: #ffffff;
+       padding: 10px 15px;
+       border: solid 5px #0b79fa;
+   }
+   .gallery-block.compact-gallery .item .description {
+       opacity: 0;
+   }
 
+   .gallery-block.compact-gallery .item a:hover .description {
+       opacity: 1;
+   }
+
+   .gallery-block .zoom-on-hover:hover .image {
+       transform: scale(1.3);
+       opacity: 0.7;
+   }
     /* showcase; */
     .my-header {
         width: 100%;
         height: 250px;
     }
+
+    /* about us */
+
+    .my-blog{
+        min-height: 250px;
+        position: relative;
+        background: url("../img/banner.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        margin-top: 0px;
+        color: #fff;
+    }
+
+    .my-blog img {
+        height: 250px;
+        width: 250px;
+    }
+
     .recentposts{
         color: #0b79fa;
-        border-bottom: 1px solid #0b79fa;
+        border-bottom: 1px solid #222222;
+    }
+    .recentposts h3{
+        font-size: 18px;
+        border-bottom: 2px solid #0b79fa;
+    }
+
+    .recentposts a{
+        font-size: 100px;
+    }
+
+    .recentposts p{
+        font-size: 10px;
     }
     .myposts h1{
         color: #0b79fa;
@@ -361,8 +484,8 @@
             font-size: 16px;
         }
         .myposts img{
-            width: 90px;
-            height: 90px;
+            width: 50px;
+            height: 50px;
 
         }
         .myposts > .bheading a{
@@ -384,6 +507,18 @@
     body {
         overflow-x: hidden;
     }
+
+
+        #imagegallery {
+            min-height: 580px;
+        }
+
+        #imagegallery h2 {
+            font-size: 22px;
+            padding: 10px 15px;
+        }
+
+
 
     /* showcase; */
     .my-header {
@@ -528,6 +663,16 @@
         overflow-x: hidden;
     }
 
+
+    #imagegallery {
+        min-height: 700px;
+    }
+
+    #imagegallery h2 {
+        font-size: 22px;
+        padding: 10px 15px;
+    }
+
     /* showcase; */
     .my-header {
         width: 100%;
@@ -668,6 +813,15 @@
     body {
         overflow-x: hidden;
     }
+
+    #imagegallery {
+    height: 900px;
+}
+
+#imagegallery h2 {
+    font-size: 22px;
+    padding: 10px 15px;
+}
 
     /* showcase; */
     .my-header {
@@ -871,6 +1025,16 @@
 
         border-radius: 20px;
     }
+
+
+    .home {
+        height: 450px;;
+        display: flex;
+       justify-content: center;
+       align-items: center;
+
+    }
+
     #bloghome h1 {
         margin-top: 60px;
         padding: 8px 15px;
@@ -881,7 +1045,7 @@
 
 
     #bloghome .recentposts a{
-        font-size: 15px;
+        font-size: 14px;
     }
 
 
@@ -914,7 +1078,23 @@
     .myposts img{
         width: 150px;
         height: 150px;
-    }
+}
+
+        .my-blog{
+            min-height: 450px;
+            position: relative;
+            background: url("../img/banner.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin-top: 0px;
+            color: #fff;
+        }
+
+        .my-blog img {
+            height: 250px;
+            width: 250px;
+        }
     .myposts > .bheading a{
         font-size: 15px !important;
     }
@@ -925,6 +1105,16 @@
     }
     .myposts p{
         font-size: 14px !important;
+    }
+
+
+    #imagegallery {
+        min-height: 1000px;
+    }
+
+    #imagegallery h2 {
+        font-size: 25px;
+        padding: 10px 15px;
     }
 
 }

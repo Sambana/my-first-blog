@@ -146,10 +146,10 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
                                <div class="card recentposts shadow p-1 mb-3 bg-white rounded">
                                    <h3 class="text-center">Recent Posts</h3>
-                                   {% for post in recentposts|slice:":2" %}
+                                   {% for post in recentposts|slice:":5" %}
 
                                        <div class="p-3 recentposts">
-                                       <h2 class=""><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                       <h2 class="text-capitalize"><a class="text-capitalize" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                                        <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
                                     </div>
                                     {% endfor %}
@@ -165,14 +165,14 @@
                                                 <div class="card-body">
                                                     <div class="row">
 
-                                                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                                                             {% if post.image %}
                                                                 <img class="img-responsive" src="{{ post.image.url }}">
                                                             {% else %}
                                                             {% endif %}
                                                         </div>
 
-                                                        <div class="col-lg-9 col-md-9 col-sm-12 col-12 read">
+                                                        <div class="col-lg-9 col-md-9 col-sm-6 col-6 read">
                                                             <p class="card-text">{{ post.text|safe|truncatewords:25|linebreaks }}</p>
                                                             <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}" class="text-primary">Read More..</a>
                                                             <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
@@ -207,147 +207,131 @@
             <div class="gallery-block compact-gallery">
                 <div class="container">
                     <div class="heading text-center pb-5">
-                        <h2 class="d-inline">Our Gallery</h2>
+                        <h2 class="d-inline">My Gallery</h2>
                     </div>
 
                     <div class="row no-gutters">
                         <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/bridal1.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/bridal1.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic11.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic11.jpg'  %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">BRIDAL-FRONT</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/bridal2.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/bridal2.jpg" alt="">
+                            <a href="{% static 'img/bgvivek.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/bgvivek.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">BRIDAL-BACK</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/bridal4.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/bridal4.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic3.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic3.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">BRIDAL-LEG</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galfirstrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/arabic3.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/arabic3.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic4.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic4.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">ARABIC</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
                         <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/arabic1.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/arabic1.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic12.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic12.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">ARABIC</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/arabic2.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/arabic2.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic6.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic6.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">ARABIC</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/simple1.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/simple1.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic10.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic10.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">SIMPLE</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galsecondrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/simple2.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/simple2.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic11.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic11.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">SIMPLE</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/stiching4.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/stiching4.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic6.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic6.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">CHUDIDHARS</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galthirdrow  col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/stiching.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/stiching.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic10.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic10.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">KIDS CLOTHING</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/stiching2.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/stiching2.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic11.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic11.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">KIDS CLOTHING</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
                         <div class="galthirdrow col-lg-3 col-md-3 col-sm-3 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/stiching3.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/stiching3.jpg" alt="">
+                            <a href="{% static 'img/gallery/pic12.jpg' %}" class="lightbox">
+                                <img class="img-fluid image" src="{% static 'img/gallery/pic12.jpg' %}" alt="">
+
                                 <span class="description">
-                                    <span class="discription-heading">BLOUSES</span>
+                                    <span class="discription-heading">VIVEK</span>
                                 </span>
                             </a>
                         </div>
 
 
 
-                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/card0.png" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/card0.png" alt="">
-                                <span class="description">
-                                    <span class="discription-heading">INVITATIONS</span>
-                                </span>
-                            </a>
-                        </div>
-
-
-
-                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/card1.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/card1.jpg" alt="">
-                                <span class="description">
-                                    <span class="discription-heading">VISITING CARDS</span>
-                                </span>
-                            </a>
-                        </div>
-
-                        <div class="galfourthrow col-lg-4 col-md-4 col-sm-4 col-4 item zoom-on-hover">
-                            <a href="img/ourgallery/bangles.jpg" class="lightbox">
-                                <img class="img-fluid image" src="img/ourgallery/bangles.jpg" alt="">
-                                <span class="description">
-                                    <span class="discription-heading">BANGLES</span>
-                                </span>
-                            </a>
-                        </div>
 
 
 

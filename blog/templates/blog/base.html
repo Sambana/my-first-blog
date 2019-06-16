@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <title>Vivek V</title>
 </head>
@@ -39,7 +39,7 @@
                                         <a href="#bloghome" class="nav-link">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#bloghome" class="nav-link">Gallery</a>
+                                        <a href="#imagegallery" class="nav-link">Gallery</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                         <button class="nav-link btn btn-link text-white" style="font-size:12px;" data-toggle="modal" data-target="#loginmodel">Login</button>
@@ -80,6 +80,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- CHANGING COLOR OF THE NAVBAR ON SCROLLING -->
         <script src="https://unpkg.com/scrollreveal"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.js"></script>
 
         <!-- SMOOTH SCROLL -->
        <script src="{% static 'js/smooth-scroll.js' %}"></script>
@@ -88,6 +89,12 @@
        </script>
     <!-- typed js -->
         <script src="{% static 'js/typed.min.js' %}"></script>
+
+        <script>
+       baguetteBox.run('.compact-gallery', {
+           animation: 'slideIn'
+       });
+   </script>
 
         <script>
             var typed = new Typed('.author', {
@@ -119,7 +126,7 @@
             window.sr = ScrollReveal();
             sr.reveal('.navbar', {
              duration: 2000,
-             origin: 'top',
+             origin: 'bottom',
              delay: 200,
              distance: '200px'
          });
@@ -139,21 +146,21 @@
             });
 
             sr.reveal('#explore-head-section',{
-                origin:'top',
+                origin:'bottom',
                 distance:'200px',
                 delay:200,
                 duration:2000,
             });
 
             sr.reveal('.tagline',{
-                origin:'top',
+                origin:'bottom',
                 distance:'200px',
                 delay:200,
                 duration:2000,
             });
 
             sr.reveal('.myposts',{
-                origin:'top',
+                origin:'bottom',
                 distance:'200px',
                 delay:200,
                 duration:2000,
