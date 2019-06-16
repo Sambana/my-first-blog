@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post
+from .models import Post,Project
 from django.contrib import messages
 from django.core.mail import send_mail
 
@@ -26,7 +26,8 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def aboutme(request):
-    return render(request, 'blog/aboutme.html')
+    projects = Project.objects.order_by('-startdate')
+    return render(request, 'blog/aboutme.html', {'projects':projects})
 
 
 def send_email(contact_form_data):

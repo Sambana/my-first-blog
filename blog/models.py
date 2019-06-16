@@ -19,12 +19,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-# 
-# class Aboutme(models.Model):
-#     mybio = RichTextField(max_length=700)
-#
-#     def publish(self):
-#         self.save()
-#
-#     def __str__(self):
-#         return self.mybio
+
+class Project(models.Model):
+    ptitile = models.CharField(max_length=200)
+    ptext=RichTextField()
+    location = models.CharField(max_length=200)
+    startdate = models.DateField()
+    enddate = models.DateField(blank=True, null=True)
+    designation=models.CharField(max_length=200)
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.ptitile
