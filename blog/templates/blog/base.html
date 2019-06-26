@@ -10,7 +10,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <title>Vivek V</title>
@@ -30,20 +29,18 @@
                             <div class="collapse navbar-collapse font-weight-bold" id="myNavbar">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a href="#showcase" class="nav-link ">Home</a>
+                                        <a href="{% block homenav %}{% endblock %}" class="nav-link ">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#home-aboutus-section" class="nav-link">About Me</a>
+                                        <a href="{% block aboutnav %}{% endblock %}" class="nav-link">About Me</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#bloghome" class="nav-link">Blog</a>
+                                        <a href="{% block blognav %}{% endblock %}" class="nav-link">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#imagegallery" class="nav-link">Gallery</a>
+                                        <a href="{% block gallerynav %}{% endblock %}" class="nav-link">Gallery</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                        <button class="nav-link btn btn-link text-white" style="font-size:12px;" data-toggle="modal" data-target="#loginmodel">Login</button>
-                                    </li> -->
+
                                     <li class="nav-item">
                                         <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                                     </li>
@@ -63,10 +60,17 @@
             <div class="container">
                 <div class="row text-center text-white">
 
-                    <div class="col-md-6 ml-auto">
+                    <div class="col-md-6">
                         <p class="lead">Copyrights &copy; 2019 Vivekanand Vemakoti</p>
+                        <p>Thank you for visiting My Blog</p>
+                        <p>From : Vivekanand Vemakoti</p>
+                    </div>
+
+                    <div class="col-md-6">
                         <p>Webiste Made By Lincolnstep.com</p>
-                        <p>Contact: sambana@lincolnstep.com</p>
+                        <p>Our Services: Personal Blogs</p>
+                        <a class="" href="htttps:lincolnstep.com"> CLICK TO VISIT OUR BLOG</a>
+                        <p>Contact: lincolnstepteam@gmail.com</p>
                     </div>
                 </div>
             </div>

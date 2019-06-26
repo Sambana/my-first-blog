@@ -19,7 +19,7 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     recentposts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
-    return render(request, 'blog/myblog.html', {'posts': posts})
+    return render(request, 'blog/myblog.html', {'posts': posts, 'recentposts':recentposts, })
 
 
 def post_detail(request, pk):
@@ -28,7 +28,8 @@ def post_detail(request, pk):
 
 def aboutme(request):
     projects = Project.objects.order_by('-startdate')
-    return render(request, 'blog/aboutme.html', {'projects':projects})
+    mybio= Aboutme.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'blog/aboutme.html', {'projects':projects, 'mybio' : mybio ,})
 
 
 def send_email(contact_form_data):

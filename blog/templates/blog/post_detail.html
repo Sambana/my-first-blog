@@ -2,25 +2,56 @@
 {% block body_class %} my-fullblog {% endblock %}
 {% block navbg %}fullblog-navbar{% endblock %}
 
+{% block homenav %} {% url 'home' %} {% endblock %}
+{% block aboutnav %} {% url 'about' %} {% endblock %}
+{% block blognav %} {% url 'post_list' %} {% endblock %}
+{% block gallerynav %} {% url 'post_list' %} {% endblock %}
+
 {% block content %}
-<div class="container m-5 p-4 bg-white">
 
-    <div class="post">
+<div class="row container-fluid" style="margin-top:70px;">
 
-        <h2>{{ post.title|safe }}</h2>
+            <div class="col-lg-1 col-md-1"></div>
 
-        {% if post.image %}
-        <img src="{{ post.image.url }}" width="200px">
-        {% else %}
-        {% endif %}
-        <p>{{ post.text|safe }}</p>
 
-        {% if post.published_date %}
-        <div class="date">
-            {{ post.published_date }}
-        </div>
-        {% endif %}
 
-    </div>
-</div>
-{% endblock %}
+            <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+
+                        <div class="card mb-3 myposts p-1 bg-white rounded">
+                            <h2 class="card-header bheading"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title|safe }}</a></h2>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4"></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                        {% if post.image %}
+                                            <img class="img-responsive" src="{{ post.image.url }}">
+                                        {% else %}
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4"></div>
+
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 read">
+                                        <p class="text-lead">Author : {{ post.author }}</p>
+                                        {% if post.published_date %}
+                                        <p class="mb-1 text-muted">Published: {{ post.published_date }}</p>
+                                        {% endif %}
+
+                                        <p class="card-text">{{ post.text|safe }}</p>
+
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+            </div>
+            <div class="col-lg-1 col-md-1"></div>
+            </div>
+
+            {% endblock %}

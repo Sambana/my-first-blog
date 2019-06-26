@@ -12,7 +12,7 @@ class Post(models.Model):
     text = RichTextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    image = models.ImageField(upload_to='blog_images',validators=[FileExtensionValidator(['jpg','gif','png'])],blank=True)
+    image = models.ImageField(upload_to='profile_pics',validators=[FileExtensionValidator(['jpg','gif','png'])],blank=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -37,6 +37,7 @@ class Project(models.Model):
 
 class Aboutme(models.Model):
     atitle = models.CharField(max_length=200, default="Welcome to My Blog")
+    aimage = models.ImageField(upload_to='blog_images',validators=[FileExtensionValidator(['jpg','gif','png'])],blank=True)
     published_date = models.DateTimeField(default=timezone.now)
     atext = RichTextField()
 
